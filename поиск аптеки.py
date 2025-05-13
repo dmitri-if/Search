@@ -71,7 +71,6 @@ def show_map(ll, spn, pts):
     
     response = requests.get(map_api_server, params=map_params)
     
-    # Сохранение карты в файл
     map_file = "map.png"
     with open(map_file, "wb") as file:
         file.write(response.content)

@@ -6,7 +6,7 @@ def geocode(address):
     geocoder_api_server = "https://geocode-maps.yandex.ru/1.x/"
     
     geocoder_params = {
-        "apikey": "ваш_api_ключ",
+        "apikey": 'f3a0fe3a-b07e-4840-a1da-06f18b2ddf13',
         "geocode": address,
         "format": "json"
     }
@@ -46,7 +46,6 @@ if __name__ == '__main__':
         address = input("Введите адрес: ")
         
         response = geocode(address)
-        
         toponym = response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
         toponym_coordinates = toponym["Point"]["pos"]
         ll = toponym_coordinates.replace(" ", ",")

@@ -5,10 +5,10 @@ from map_scale import calculate_spn
 
 
 def geocode(address):
-    geocoder_api_server = "https://geocode-maps.yandex.ru/1.x/"
+    geocoder_api_server = 'http://geocode-maps.yandex.ru/1.x/?'
     
     geocoder_params = {
-        "apikey": "ваш_api_ключ",
+        "apikey": 'f3a0fe3a-b07e-4840-a1da-06f18b2ddf13',
         "geocode": address,
         "format": "json"
     }
@@ -25,7 +25,7 @@ def search_pharmacy(ll):
     search_api_server = "https://search-maps.yandex.ru/v1/"
     
     search_params = {
-        "apikey": "ваш_api_ключ",
+        "apikey": 'f3a0fe3a-b07e-4840-a1da-06f18b2ddf13',
         "text": "аптека",
         "lang": "ru_RU",
         "ll": ll,
@@ -59,7 +59,7 @@ def calculate_distance(point1, point2):
 
 
 def show_map(ll, spn, pts):
-    map_api_server = "https://static-maps.yandex.ru/1.x/"
+    map_api_server = 'https://static-maps.yandex.ru/v1?'
     
     map_params = {
         "ll": ll,

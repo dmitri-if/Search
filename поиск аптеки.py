@@ -5,7 +5,6 @@ from map_scale import calculate_spn
 
 
 def geocode(address):
-    """Геокодирование адреса с помощью Yandex Geocoder API"""
     geocoder_api_server = "https://geocode-maps.yandex.ru/1.x/"
     
     geocoder_params = {
@@ -23,7 +22,6 @@ def geocode(address):
 
 
 def search_pharmacy(ll):
-    """Поиск ближайшей аптеки с помощью Yandex Places API"""
     search_api_server = "https://search-maps.yandex.ru/v1/"
     
     search_params = {
@@ -44,12 +42,10 @@ def search_pharmacy(ll):
 
 
 def calculate_distance(point1, point2):
-    """Вычисление расстояния между двумя точками в метрах"""
     lon1, lat1 = map(float, point1.split(','))
     lon2, lat2 = map(float, point2.split(','))
     
-    # Формула гаверсинусов
-    R = 6371000  # радиус Земли в метрах
+    R = 6371000
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
     delta_phi = math.radians(lat2 - lat1)
@@ -63,7 +59,6 @@ def calculate_distance(point1, point2):
 
 
 def show_map(ll, spn, pts):
-    """Отображение карты с заданными параметрами"""
     map_api_server = "https://static-maps.yandex.ru/1.x/"
     
     map_params = {
